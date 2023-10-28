@@ -1,5 +1,7 @@
 package Que2;
 
+import java.util.Scanner;
+
 public class Clerk extends Employee {
 
 	public Clerk() {
@@ -10,6 +12,17 @@ public class Clerk extends Employee {
 	public Clerk(String name, int age, int id, double salary) {
 		super(name, age, id, salary);
 		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void acceptData(Scanner sc) {
+		try {
+			System.out.println("Enter Clerk details : ");
+			// TODO Auto-generated method stub
+			super.acceptData(sc);
+		} catch (EmployeeException ex) {
+			ex.printStackTrace();
+		}
 	}
 
 	@Override

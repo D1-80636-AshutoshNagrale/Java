@@ -1,6 +1,7 @@
 package Que2;
 
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Person {
 	private String name;
@@ -38,6 +39,19 @@ public class Person {
 			this.age = age;
 		} else {
 			throw new EmployeeException(String.valueOf(age));
+		}
+	}
+
+	public void acceptData(Scanner sc) {
+		try {
+			System.out.println("Enter name : ");
+			String name = sc.next();
+			this.setName(name);
+			System.out.println("Enter age : ");
+			int age = sc.nextInt();
+			this.setAge(age);
+		} catch (EmployeeException ex) {
+			ex.printStackTrace();
 		}
 	}
 

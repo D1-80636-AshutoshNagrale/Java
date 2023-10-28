@@ -1,5 +1,7 @@
 package Que2;
 
+import java.util.Scanner;
+
 public class Labor extends Employee {
 
 	private double rate;
@@ -20,6 +22,22 @@ public class Labor extends Employee {
 		super(name, age, id, salary);
 		this.rate = rate;
 		this.hours = hours;
+	}
+
+	@Override
+	public void acceptData(Scanner sc) {
+		try {
+			System.out.println("Enter Labor details : "); // TODO Auto-generated method stub
+			super.acceptData(sc);
+			System.out.println("Enter rate : ");
+			double rate = sc.nextDouble();
+			this.setRate(rate);
+			System.out.println("Enter hours : ");
+			int hours = sc.nextInt();
+			this.setHours(hours);
+		} catch (EmployeeException ex) {
+			ex.printStackTrace();
+		}
 	}
 
 	public double getRate() {

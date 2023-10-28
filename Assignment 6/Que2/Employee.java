@@ -1,6 +1,7 @@
 package Que2;
 
 import java.util.Objects;
+import java.util.Scanner;
 
 public abstract class Employee extends Person {
 	private int id;
@@ -21,6 +22,22 @@ public abstract class Employee extends Person {
 		super(name, age);
 		this.id = id;
 		this.salary = salary;
+	}
+
+	@Override
+	public void acceptData(Scanner sc) {
+		// TODO Auto-generated method stub
+		try {
+			super.acceptData(sc);
+			System.out.println("Enter id : ");
+			int id = sc.nextInt();
+			this.setId(id);
+			System.out.println("Enter salary : ");
+			double salary = sc.nextDouble();
+			this.setSalary(salary);
+		} catch (EmployeeException ex) {
+			ex.printStackTrace();
+		}
 	}
 
 	public int getId() {
